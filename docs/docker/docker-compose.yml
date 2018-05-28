@@ -9,22 +9,22 @@ services:
             nw_sl:
                 ipv4_address: 172.30.0.20
         volumes:
-            - /docker/superlogica/www/superlogica/:/var/www/superlogica/
-            - /docker/superlogica/conf/php:/usr/local/etc/php/
-            - /docker/superlogica/logs/:/var/log/php/
+            - /docker/locaweb/www/locaweb/:/var/www/locaweb/
+            - /docker/locaweb/conf/php:/usr/local/etc/php/
+            - /docker/locaweb/logs/:/var/log/php/
 
-    superlogica:
-        container_name: superlogica
+    locaweb:
+        container_name: locaweb
         image: nginx:latest
         ports:
-            - 90:90
+            - 91:91
         networks:
             nw_sl:
                 ipv4_address: 172.30.0.30
         volumes:
-            - /docker/superlogica/conf/nginx/:/etc/nginx/conf.d/
-            - /docker/superlogica/logs/:/var/log/nginx/
-            - /docker/superlogica/www/superlogica/:/var/www/superlogica/
+            - /docker/locaweb/conf/nginx/:/etc/nginx/conf.d/
+            - /docker/locaweb/logs/:/var/log/nginx/
+            - /docker/locaweb/www/locaweb/:/var/www/locaweb/
         links:
             - php_sl
 

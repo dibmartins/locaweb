@@ -20,13 +20,13 @@ try{
     $message = new \Locaweb\Message($api);
 
     $response = $message->post([
+        'headers' => ['Content-Type': 'text/plain'], // 'text/html' para body em html
         'subject' => "qualquer titulo",
         'body'    => "qualquer corpo",
         'from'    => "remetente@dominio.com",
         'to'      => "destinatario@dominio2.com",
         'cc'      => ['cc1@dominio2.com', 'cc2@dominio2.com'],
-        'bcc'     => ['bcc1@dominio2.com', 'bcc2@dominio2.com'],
-        'headers' => ['Content-Type': 'text/plain']
+        'bcc'     => ['bcc1@dominio2.com', 'bcc2@dominio2.com']
     ]);
 
     var_dump($response);
