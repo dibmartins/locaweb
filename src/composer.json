@@ -2,7 +2,7 @@
     "name"          : "dibmartins/locaweb",
     "description"   : "Wrapper php para comunicação com a api locaweb",
     "type"          : "library",
-    "license"       : "Apache",
+    "license"       : "Unlicense",
     "authors": [{
         "name"  : "Diego Botelho",
         "email" : "dibmartins@gmail.com"
