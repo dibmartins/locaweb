@@ -1,0 +1,25 @@
+{
+    "name"          : "dibmartins/locaweb",
+    "description"   : "Wrapper php para comunicação com a api locaweb",
+    "type"          : "library",
+    "license"       : "Apache",
+    "authors": [{
+        "name"  : "Diego Botelho",
+        "email" : "dibmartins@gmail.com"
+    }],
+    
+    "require": {
+        "php-curl-class/php-curl-class" : "^7.1"
+    },
+    
+    "autoload": {
+        
+        "psr-4": {
+            "Locaweb\\": "Locaweb"
+        },
+
+        "classmap" : [
+            "Locaweb"
+        ]
+    }
+}

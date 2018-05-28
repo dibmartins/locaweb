@@ -4,9 +4,16 @@ try{
 
     $api = require_once('api.php');
 
-    $clientes = new \Locaweb\Message($api);
+    $message = new \Locaweb\Message($api);
 
-    $response = $clientes->get(['id' => 25]);
+    $hoje = new \DateTime();
+
+    $response = $message->get([
+        'id'         => 36258, 
+        'status'     => 'all',
+        'start_date' => $hoje->format('Y-m-d'),
+        'end_date'   => $hoje->format('Y-m-d')
+    ]);
 
     echo '<pre>';
     print_r($response);

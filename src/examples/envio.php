@@ -4,14 +4,14 @@ try{
 
     $api = require_once('api.php');
 
-    $clientes = new \Locaweb\Message($api);
+    $message = new \Locaweb\Message($api);
 
-    $response = $clientes->post([
-        'subject' => "qualquer titulo",
-        'body'    => "qualquer corpo",
-        'from'    => "remetente@dominio.com",
-        'to'      => "destinatario@dominio2.com",
-        'cc'      => ['cc1@dominio2.com', 'cc2@dominio2.com'],
+    $response = $message->post([
+        'subject' => 'Teste DNA',
+        'body'    => 'ola mundo',
+        'from'    => 'noreply@seudominio.com',
+        'to'      => 'dibmartins@gmail.com',
+        'cc'      => ['cc1@seudominio.com', 'cc2@seudominio.com'],
         'bcc'     => ['bcc1@dominio2.com', 'bcc2@dominio2.com'],
         'headers' => ['Content-Type' => 'text/plain']
     ]);
