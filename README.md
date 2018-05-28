@@ -1,5 +1,5 @@
-# Superlogica
-Wrapper php para comunicação com a api locaweb
+# Locaweb SMTP
+Wrapper php para comunicação com a api SMTP da locaweb
 
 # Install
 $ composer require dibmartins/locaweb
@@ -9,7 +9,7 @@ http://developer.locaweb.com.br/documentacoes/smtp/api-como-utilizar/
 
 # Examples
 
-Para cadastrar um e-mail:
+Para enviar um e-mail:
 ```php
 try{
 
