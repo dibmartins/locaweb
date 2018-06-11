@@ -67,13 +67,16 @@ abstract class Endpoint {
      * Consulta por registros no endpoint
      * 
      * @param array $data = null Parâmetros da requisição
+     * @param array $urlParams = '' Exemplo: $urlParams = '/5/6' => /endpoint/5/6
      * @return object Resposta do serviço
      */
-    public function get($data = null){
+    public function get($data = null, $urlParams = ''){
         
         try{
+
+            $url = $this->getEndpoint() . $urlParams;
             
-            return $this->api->execute('get', $this->getEndpoint(), $data);
+            return $this->api->execute('get', $url, $data);
         }
         catch(\Exception $e){
             
