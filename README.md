@@ -37,7 +37,7 @@ catch(\Locaweb\Exception $e){
 }
 ```
 
-Para obter o status do e-mail enviado:
+Consulta utilizando filtros
 ```php
 try{
 
@@ -47,7 +47,35 @@ try{
 
     $message = new \Locaweb\Message($api);
 
-    $response = $message->get(['id' => 25]);
+    $hoje = new \DateTime();
+
+    $response = $message->get([
+        'status'     => 'all',
+        'start_date' => $hoje->format('Y-m-d'),
+        'end_date'   => $hoje->format('Y-m-d'),
+        'page'       => 1,
+        'per'        => 100
+    ]);
+
+    var_dump($response);
+}
+catch(\Locaweb\Exception $e){
+    
+    var_dump($e);
+}
+```
+
+Consulta utilizando id
+```php
+try{
+
+    require_once('../../vendor/autoload.php');
+
+    $api = new \Locaweb\Api('https://api.smtplw.com.br/v1/', 'your_auth_token');
+
+    $message = new \Locaweb\Message($api);
+
+    $response = $message->getById(37764);
 
     var_dump($response);
 }
