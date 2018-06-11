@@ -6,7 +6,7 @@ try{
 
     $message = new \Locaweb\Message($api);
 
-    $response = $message->getById();
+    $response = $message->getById(37764);
 
     echo '<pre>';
     print_r($response);
